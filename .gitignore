@@ -1,0 +1,7 @@
+.idea
+backend/.idea
+frontend/.idea
+
+.vscode
+backend/.vscode
+frontend/.vscode
