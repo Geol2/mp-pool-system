@@ -11,5 +11,9 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.5.0",
     "vite": "^5.0.0"
+  },
+  "dependencies": {
+    "@marcoschulte/vue3-progress": "^0.0.7",
+    "axios": "^1.6.2"
   }
 }

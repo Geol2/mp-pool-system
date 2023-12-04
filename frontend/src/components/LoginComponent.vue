@@ -10,21 +10,26 @@
         <div class="container-fluid m-3 p-3 suit rounded">
             <form>
                 <div class="mb-3">
-                    <label>
-                        <div class="text-left">아이디</div>
-                        <input type="text" name="userId" id="id" class="form-control" value="" placeholder="아이디를 입력하세요" />
-                        <div class="error-id"></div>
-                    </label>
+                    <div class="text-left">아이디</div>
+                        <label>
+                            <input type="text" name="userId" id="id" class="form-control"
+                                   value="" placeholder="아이디를 입력하세요" />
+                        </label>
+                    <div class="error-id"></div>
                 </div>
 
                 <div class="mb-3">
+                    <div class="text-left">비밀번호</div>
                     <label>
-                        <div class="text-left">비밀번호</div>
-                        <input type="password" name="password" id="pwd" class="form-control" value="" placeholder="비밀번호를 입력하세요" />
-                        <div class="error-password"></div>
+                        <input type="password" name="password" id="pwd" class="form-control"
+                               value="" placeholder="비밀번호를 입력하세요" />
                     </label>
+                    <div class="error-password"></div>
                 </div>
                 <button>로그인</button>
+                <div class="m-3">
+                    * 회원 가입요청은 별도로 신청해주세요.
+                </div>
             </form>
         </div>
     </div>
@@ -44,9 +49,6 @@
         padding: 5px;
     }
 </style>
+<script setup>
 
-<script>
-export default {
-    
-}
 </script>

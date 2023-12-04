@@ -6,8 +6,17 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 
 - [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
-##
+## dependencies
 
 ```
+# custom
 npm install vue bootstrap bootstrap-vue
+npm install @marcoschulte/vue3-progress
+npm install axios
+```
+
+### .env.development.local
+```
+APP_ENV=localhost
+# 기타 등등 매우 중요한 정보
 ```
