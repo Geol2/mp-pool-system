@@ -4,3 +4,4 @@ import App from './App.vue'
 
 createApp(App).mount('#app')
 // console.log(__APP_ENV__)
+// console.log(__SERVER_ROOT__)
