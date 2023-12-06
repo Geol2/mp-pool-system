@@ -7,7 +7,7 @@
             <div class="version-tag"> v.0.1 </div>
         </div>
 
-        <div class="container-fluid m-3 p-3 suit rounded">
+        <div class="container-fluid justify-content-center m-3 p-3 suit rounded">
             <form id="login-form">
                 <div class="mb-3">
                     <div class="text-left">아이디</div>
@@ -21,16 +21,17 @@
                 <div class="mb-3">
                     <div class="text-left">비밀번호</div>
                     <label>
-                        <input type="password" name="password" id="pwd" class="form-control"
+                        <input type="password" name="userPwd" id="pwd" class="form-control"
                             value="" placeholder="비밀번호를 입력하세요" />
                     </label>
                     <div class="error-password"></div>
                 </div>
-                <button @click="login()">로그인</button>
+                
                 <div class="m-3">
                     * 회원 가입요청은 별도로 신청해주세요.
                 </div>
             </form>
+            <button @click="login()">로그인</button>
         </div>
         <div class="mt-auto">
             2023 @ Copyright
@@ -57,27 +58,30 @@
     import axios from 'axios';
 
     export default {
-        
+        data() {
+            return {
+            }
+        },
         methods: {
             login() {
                 let form = document.getElementById("login-form");
-                
                 axios.post(
                     __SERVER_ROOT__ + '/user', 
                     {
                         userId: form[0].value,
-                        password: form[1].value
+                        userPwd: form[1].value
                     }
                 )
                 .then(function (response) {
-                    debugger;
                     console.log(response);
+                    console.log("then");
+                    
                 })
                 .catch(function (error) {
-                    debugger;
                     console.log(error);
+                    console.log("catch");
                 });
-            }
+            },
         }
     }
 </script>
