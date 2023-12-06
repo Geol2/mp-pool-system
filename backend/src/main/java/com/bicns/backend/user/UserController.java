@@ -1,20 +1,31 @@
 package com.bicns.backend.user;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.LinkedHashMap;
-
 @Controller
 public class UserController {
 
+    UserService userService;
+
+    UserController(UserService userService) {
+        this.userService = userService;
+    }
+
     @PostMapping("/user")
-    @CrossOrigin(origins = "http://localhost:5173")
-    public ResponseEntity<String> postUser(@RequestBody LinkedHashMap<String, String> dto) {
-        System.out.println(dto.get("userId") + ", " + dto.get("password"));
-        return new ResponseEntity<>("ok", HttpStatus.OK);
+    @ResponseBody
+    @CrossOrigin(origins = "${env.frontend}")
+    public ResponseEntity<UserVO> postUser(@RequestBody LoginDTO dto) {
+        System.out.println(dto.getUserId() + ", " + dto.getUserPwd());
+
+        UserVO userVO = new UserVO();
+        userVO.setUserId(dto.getUserId());
+        userVO.setUserPwd(dto.getUserPwd());
+
+        UserVO returnUser = userService.getOneUserByUserId(userVO);
+
+        return new ResponseEntity<>(returnUser, HttpStatus.OK);
     }
 
     @GetMapping("/user")
