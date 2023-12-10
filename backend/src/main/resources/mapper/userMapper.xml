@@ -5,7 +5,7 @@
 <mapper namespace="com.bicns.backend.user.UserMapper">
 
     <select id="selectByUserId" parameterType="UserVO" resultType="UserVO">
-        SELECT * FROM user WHERE USER_ID = #{userId}
+        SELECT * FROM user WHERE USER_ID = #{userId} AND USER_PWD = #{userPwd}
     </select>
 
 </mapper>
