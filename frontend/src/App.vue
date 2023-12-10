@@ -1,5 +1,5 @@
 <script>
-import LoginComponent from "./components/LoginComponent.vue"
+import LoginComponent from "/@components/LoginComponent.vue"
 import {defineComponent} from 'vue';
 import "@marcoschulte/vue3-progress/dist/"
 
@@ -37,7 +37,8 @@ export default defineComponent({
 
 <template>
   <div>
+    <router-view></router-view>
     <Vue3ProgressBar></Vue3ProgressBar>
-    <LoginComponent></LoginComponent>
+    <!-- <LoginComponent></LoginComponent> -->
   </div>
 </template>

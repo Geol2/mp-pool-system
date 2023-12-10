@@ -1,11 +1,8 @@
-import { defineComponent } from 'vue'
+import {createRouter, createWebHistory} from 'vue-router'
+import routes from '/@router/routes.js'
 
-const NotFound = defineComponent({
-    template: '<div>Not Found</div>',
+export const router = createRouter({
+    history: createWebHistory(),
+    linkActiveClass: 'active',
+    routes
 })
-
-const routes = [
-    { path: '/', redirect: '/'},
-]
-
-export default routes

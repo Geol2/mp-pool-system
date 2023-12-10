@@ -22,7 +22,7 @@
                     <div class="text-left">비밀번호</div>
                     <label>
                         <input type="password" name="userPwd" id="pwd" class="form-control"
-                            value="" placeholder="비밀번호를 입력하세요" />
+                            value="" onkeyup="Enter()" placeholder="비밀번호를 입력하세요" />
                     </label>
                     <div class="error-password"></div>
                 </div>
@@ -75,7 +75,6 @@
                 .then(function (response) {
                     console.log(response);
                     console.log("then");
-                    
                 })
                 .catch(function (error) {
                     console.log(error);
