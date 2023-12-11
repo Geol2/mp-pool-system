@@ -39,6 +39,5 @@ export default defineComponent({
   <div>
     <router-view></router-view>
     <Vue3ProgressBar></Vue3ProgressBar>
-    <!-- <LoginComponent></LoginComponent> -->
   </div>
 </template>

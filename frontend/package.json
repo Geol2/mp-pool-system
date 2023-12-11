@@ -16,6 +16,7 @@
     "@marcoschulte/vue3-progress": "^0.0.7",
     "axios": "^1.6.2",
     "vue-router": "^4.0.13",
+    "vue3-cookies": "^1.0.6",
     "vuex": "^4.0.2"
   }
 }

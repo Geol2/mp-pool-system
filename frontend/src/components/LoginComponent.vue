@@ -55,32 +55,40 @@
 </style>
 
 <script>
+    import { ref } from 'vue';
+    import { reactive } from 'vue';
     import axios from 'axios';
+    import { useCookies } from "vue3-cookies";
 
     export default {
-        data() {
-            return {
-            }
-        },
-        methods: {
-            login() {
+        setup() {
+            const { cookies } = useCookies();
+            let user = ref("");
+            let token = ref("");
+
+            const login = async () => {
                 let form = document.getElementById("login-form");
-                axios.post(
-                    __SERVER_ROOT__ + '/user', 
-                    {
-                        userId: form[0].value,
-                        userPwd: form[1].value
-                    }
-                )
-                .then(function (response) {
-                    console.log(response);
-                    console.log("then");
-                })
-                .catch(function (error) {
+                
+                try {
+                    const response = await axios.post(
+                        __SERVER_ROOT__ + '/user', 
+                        {
+                            userId: form[0].value,
+                            userPwd: form[1].value
+                        }
+                    );
+                    console.log(response.data.token);
+                    user = response.data.user;
+                    token = response.data.token;
+                    
+                    cookies.set("user", user);
+                    cookies.set("token", token);
+                } catch(error) {
                     console.log(error);
-                    console.log("catch");
-                });
-            },
-        }
+                }
+            }
+
+            return { cookies, login, user, token };
+        },
     }
 </script>

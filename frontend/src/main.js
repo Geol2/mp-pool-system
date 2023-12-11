@@ -3,6 +3,7 @@ import App from './App.vue'
 
 import { Vue3ProgressPlugin } from '@marcoschulte/vue3-progress';
 import { router } from '/@router/router.js';
+
 import './style.css'
 
 createApp(App)
