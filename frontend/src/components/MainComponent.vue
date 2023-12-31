@@ -1,11 +1,11 @@
 <template>
-    <div>
-        Main Vue
-    </div>
+	<div>
+		Main Vue
+	</div>
 </template>
 
 <script scoped>
-    export default {
-        
-    }
+export default {
+
+}
 </script>
