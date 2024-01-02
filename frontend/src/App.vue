@@ -1,24 +1,43 @@
-<script setup>
-import LoginComponent from "./components/LoginComponent.vue"
+<script>
+import LoginComponent from "/@components/LoginComponent.vue"
+import {defineComponent} from 'vue';
+import "@marcoschulte/vue3-progress/dist/"
+
+export default defineComponent({
+  name: 'MpPoolApp',
+  components: {
+    LoginComponent,
+  },
+  data() {
+    return {
+      progresses: []
+    }
+  },
+  mounted() {
+    // debugger;
+    this.stop();
+    //debugger;
+  },
+  created() {
+    // debugger;
+    this.start();
+    //debugger;
+  },
+  methods: {
+    start() {
+        const progress = this.$progress.start();
+        this.progresses.push(progress);
+    },
+    stop() {
+        this.progresses.pop()?.finish();
+    },
+  }
+})
 </script>
 
 <template>
   <div>
-    <LoginComponent></LoginComponent>
+    <router-view></router-view>
+    <Vue3ProgressBar></Vue3ProgressBar>
   </div>
 </template>
-
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
